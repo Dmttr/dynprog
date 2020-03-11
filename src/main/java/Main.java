@@ -2,9 +2,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        PrimeFinder primeFinder = new PrimeFinder(5);
+        // 1. Primes
+        PrimeFinder primeFinder = new PrimeFinder();
+        primeFinder.setIndex(7);
         try{
-            System.out.println("prime number " + primeFinder.getN() + ": " + primeFinder.findPrimeByIndex());
+            int prime = primeFinder.findPrimeByIndex();
+            System.out.println("prime with index " + primeFinder.getIndex() + " is: " + prime);
             System.out.println("all found primes: " + primeFinder.getPrimes().toString());
         }
         catch (ArrayIndexOutOfBoundsException e){
@@ -13,6 +16,11 @@ public class Main {
         catch (Exception e){
             System.out.println("unknown error");
         }
-
+        System.out.println("------------------");
+        
+        // 2. Stamps
+        int price = 17, maxStampValue = 6;
+        int m = MinStampsFinder.compute(price, maxStampValue);
+        System.out.println("Min to get " + price + " from " + maxStampValue + " is " + m);
     }
 }

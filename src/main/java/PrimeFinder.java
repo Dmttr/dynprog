@@ -7,30 +7,26 @@ import java.util.List;
 
 public class PrimeFinder {
 
-    private int n;
+    private int index;
     private List<Integer> primes = new ArrayList<Integer>();
-
-    public PrimeFinder(int n) {
-        this.n = n;
-    }
 
     public List<Integer> getPrimes() {
         return primes;
     }
 
-    public int getN() {
-        return n;
+    public int getIndex() {
+        return index;
     }
 
-    public void setN(int n) {
-        this.n = n;
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     private boolean isPrime(int n){
         boolean flag = true;
         for(int i = 2; i <= n/2; ++i)
         {
-            // condition for nonprime number
+            // condition for non-prime number
             if(n % i == 0)
             {
                 flag = false;
@@ -43,13 +39,13 @@ public class PrimeFinder {
     public int findPrimeByIndex(){
 
         int counter = 1, nCounter = 0;
-        while (nCounter < this.n){
+        while (nCounter < this.index){
             counter++;
             if (isPrime(counter)){
                 primes.add(counter);
                 nCounter++;
             }
         }
-        return primes.get(this.n - 1);
+        return primes.get(this.index - 1);
     }
 }
