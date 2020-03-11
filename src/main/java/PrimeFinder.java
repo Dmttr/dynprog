@@ -8,9 +8,14 @@ import java.util.List;
 public class PrimeFinder {
 
     private int n;
+    private List<Integer> primes = new ArrayList<Integer>();
 
     public PrimeFinder(int n) {
         this.n = n;
+    }
+
+    public List<Integer> getPrimes() {
+        return primes;
     }
 
     public int getN() {
@@ -35,9 +40,8 @@ public class PrimeFinder {
         return flag;
     }
 
-    public int getPrime(){
+    public int findPrimeByIndex(){
 
-        List<Integer> primes = new ArrayList<Integer>();
         int counter = 1, nCounter = 0;
         while (nCounter < this.n){
             counter++;
