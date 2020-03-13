@@ -1,3 +1,9 @@
+import booksinlibrary.Book;
+import booksinlibrary.BooksFinder;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -22,5 +28,9 @@ public class Main {
         int price = 17, maxStampValue = 6;
         int m = MinStampsFinder.compute(price, maxStampValue);
         System.out.println("Min to get " + price + " from " + maxStampValue + " is " + m);
+
+        List<Book> bookList = new ArrayList<Book>();
+        bookList.add(new Book(3,4));
+        System.out.println(BooksFinder.findMaxKnowledge(bookList, 2));
     }
 }
