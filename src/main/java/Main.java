@@ -31,6 +31,12 @@ public class Main {
 
         List<Book> bookList = new ArrayList<Book>();
         bookList.add(new Book(3,4));
-        System.out.println(BooksFinder.findMaxKnowledge(bookList, 2));
+        bookList.add(new Book(1,3));
+        bookList.add(new Book(4,10));
+        bookList.add(new Book(2,7));
+        bookList.add(new Book(1,6));
+        bookList.add(new Book(3,5));
+
+        System.out.println(BooksFinder.findMaxKnowledge(bookList, 8));
     }
 }

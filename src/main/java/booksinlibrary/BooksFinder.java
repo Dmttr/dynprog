@@ -17,9 +17,17 @@ public class BooksFinder {
 
         for (int i = 2; i <= books.size(); i++) {
             for (int t = 2; t <= totalLearningTime; t++) {
+
                 int bKnowledge = books.get(i-1).getKnowledge();
                 int bTime = books.get(i-1).getLearningTime();
-                knowledge[i][t] = bKnowledge + knowledge[i-1][t-bTime];
+
+                if (t <= totalLearningTime){
+                    knowledge[i][t] = Math.max(
+                            bKnowledge + knowledge[i-1][(t-bTime) < 0? 0: t-bTime],
+                            knowledge[i-1][t]);
+                }else{
+                    knowledge[i][t] = knowledge[i-1][(t-bTime) < 0? 0: t-bTime];
+                }
             }
         }
 
